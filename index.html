@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description">
+    <meta name="author">
+    <link rel="stylesheet" href="./css/application.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script> -->
+    <title>Tabs Overflow</title>
+
+</head>    
+
+<body>
+
+    <!-- <h1 class="header-title">Tabs Overflow</h1> -->
+  <header class="header none">
+    <img class="header-logo" src="./images/svg/logo.svg" alt="">
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-list-item">Home</li>
+        <li class="nav-list-item">Page 2</li>
+        <li class="nav-list-item">Page 3</li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="splash-section fbvc">
+    <div class="splash-container fbvc">
+      <img class="splash-logo" src="./images/svg/logo.svg" alt="">
+      <button class="splash-btn">Download Tabs Overflow Chrome Extension</button>
+    </div>    
+  </section>
+
+  <img id="heart" class="icon" src="./icons/svg/heart.svg" alt="">
+  <img id="cart" class="icon" src="./icons/svg/commerce.svg" alt="">
+  <img id="mail" class="icon" src="./icons/svg/message.svg" alt="">
+  <img id="twitter" class="icon" src="./icons/svg/twitter-1.svg" alt="">
+  <img id="computer" class="icon" src="./icons/svg/computer.svg" alt="">
+  <img id="cursor" class="icon" src="./icons/svg/cursor.svg" alt="">
+  <img id="like" class="icon" src="./icons/svg/like.svg" alt="">
+
+
+  
+  <script>
+
+    const mr = (frm, to) => {
+      Math.floor((Math.random() * to) + frm);
+    };
+
+    let tm = new TimelineMax();
+    let icons = [
+       ["heart", 10, 0, [{x:0, y:-30, rotation: 0}, {x:330, y:-390, rotation: 150}, {x:800, y:-390, rotation: 400}]],
+       ["cart", 10, 0, [{x:-20, y:-30, rotation: 0}, {x:-330, y:-390, rotation: 150}, {x:-800, y:-390, rotation: 400}]],
+       ["mail", 10, 1, [{x:0, y:-30, rotation: 0}, {x:-330, y:-190, rotation: 150}, {x:-800, y:-290, rotation: 400}]],
+       ["twitter", 10, 0, [{x:30, y:-30, rotation: 0}, {x:330, y:-190, rotation: 150}, {x:800, y:-290, rotation: 400}]],
+       ["computer", 10, 1, [{x:10, y:-30, rotation: 0}, {x:330, y:-190, rotation: 150}, {x:800, y:-290, rotation: 400}]],
+       ["cursor", 10, 0, [{x:-30, y:-30, rotation: 0}, {x:130, y:-590, rotation: 150}, {x:300, y:-890, rotation: 400}]],
+       ["like", 10, 0, [{x:20, y:-30, rotation: 0}, {x:130, y:-590, rotation: 150}, {x:300, y:-890, rotation: 400}]]
+    ];
+
+    icons.forEach(icon => { 
+      tm.to(document.getElementById(icon[0]), icon[1], {
+        bezier: {
+          type: "soft",
+          values: icon[3],
+          autoRotate: false
+        },
+        ease: Linear.easeNone,
+        repeat: -1
+      }, `start+=${icon[2]}`);
+    });
+
+  </script>
+
+</body>
+</html>
