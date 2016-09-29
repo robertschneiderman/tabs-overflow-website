@@ -35,7 +35,7 @@
   background-color: #4F73A7;
 }
 
-.splash-container {background-color: rgba(79,115,167,0.6);/* height: 20rem; */z-index: 8000;}
+.splash-container {/* background-color: rgba(79,115,167,0.6); *//* height: 20rem; */z-index: 8000;}
 
 .splash-logo {
   margin-bottom: 2rem;
