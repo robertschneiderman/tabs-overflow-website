@@ -31,41 +31,64 @@
     <div class="splash-container fbvc">
       <img class="splash-logo" src="./images/svg/logo.svg" alt="">
       <button class="splash-btn">Download Tabs Overflow Chrome Extension</button>
-    </div>    
+    </div> 
+
+    <img id="heart" class="icon" src="./icons/svg/heart.svg" alt="">
+    <img id="cart" class="icon" src="./icons/svg/commerce.svg" alt="">
+    <img id="mail" class="icon" src="./icons/svg/message.svg" alt="">
+    <img id="twitter" class="icon" src="./icons/svg/twitter-1.svg" alt="">
+    <img id="computer" class="icon" src="./icons/svg/computer.svg" alt="">
+    <img id="cursor" class="icon" src="./icons/svg/cursor.svg" alt="">
+    <img id="like" class="icon" src="./icons/svg/like.svg" alt="">      
+    <img id="planet" class="icon" src="./icons/svg/planet-earth.svg" alt="">      
   </section>
-
-  <img id="heart" class="icon" src="./icons/svg/heart.svg" alt="">
-  <img id="cart" class="icon" src="./icons/svg/commerce.svg" alt="">
-  <img id="mail" class="icon" src="./icons/svg/message.svg" alt="">
-  <img id="twitter" class="icon" src="./icons/svg/twitter-1.svg" alt="">
-  <img id="computer" class="icon" src="./icons/svg/computer.svg" alt="">
-  <img id="cursor" class="icon" src="./icons/svg/cursor.svg" alt="">
-  <img id="like" class="icon" src="./icons/svg/like.svg" alt="">
-
-
   
   <script>
 
     const mr = (frm, to) => {
-      Math.floor((Math.random() * to) + frm);
+      return Math.floor((Math.random() * to) + frm);
     };
+    const randomDirection = (prv, increment) => {
+      randX = mr(1, 2);      
+      if (randX === 1) {
+        return mr(prv, prv - increment);
+      } else if (randX === 2) {
+        return mr(prv, prv + increment);        
+      }
+    };     
 
     let tm = new TimelineMax();
-    let icons = [
-       ["heart", 10, 0, [{x:0, y:-30, rotation: 0}, {x:330, y:-390, rotation: 150}, {x:800, y:-390, rotation: 400}]],
-       ["cart", 10, 0, [{x:-20, y:-30, rotation: 0}, {x:-330, y:-390, rotation: 150}, {x:-800, y:-390, rotation: 400}]],
-       ["mail", 10, 1, [{x:0, y:-30, rotation: 0}, {x:-330, y:-190, rotation: 150}, {x:-800, y:-290, rotation: 400}]],
-       ["twitter", 10, 0, [{x:30, y:-30, rotation: 0}, {x:330, y:-190, rotation: 150}, {x:800, y:-290, rotation: 400}]],
-       ["computer", 10, 1, [{x:10, y:-30, rotation: 0}, {x:330, y:-190, rotation: 150}, {x:800, y:-290, rotation: 400}]],
-       ["cursor", 10, 0, [{x:-30, y:-30, rotation: 0}, {x:130, y:-590, rotation: 150}, {x:300, y:-890, rotation: 400}]],
-       ["like", 10, 0, [{x:20, y:-30, rotation: 0}, {x:130, y:-590, rotation: 150}, {x:300, y:-890, rotation: 400}]]
-    ];
+    // let icons = [
+    //    ["heart", 10, 0],
+    //    ["cart", 10, 0],
+    //    ["mail", 10, 1],
+    //    ["twitter", 10, 0],
+    //    ["computer", 10, 1],
+    //    ["cursor", 10, 0],
+    //    ["like", 10, 0]
+    // ];
 
-    icons.forEach(icon => { 
+    let icons = document.querySelectorAll('.icon');
+
+    icons.forEach(icon => {
+      let x1 = mr(-30, 30);
+      let x2 = randomDirection(x1, 400);
+      let x3 = randomDirection(x2, 800);
+      let y1 = mr(-30, 30);
+      let y2 = mr(y1, y1 - 200);
+      let y3 = mr(y2, y2 - 300);
+      let r1 = mr(-30, 30);
+      let r2 = mr(r1, r1 + 50);
+      let r3 = mr(r2, r2 + 50);
+    
       tm.to(document.getElementById(icon[0]), icon[1], {
         bezier: {
           type: "soft",
-          values: icon[3],
+          values: [
+            {x: x1, y: y1, rotation: r1},
+            {x: x2, y: y2, rotation: r2},
+            {x: x3, y: y3, rotation: r3}
+          ],
           autoRotate: false
         },
         ease: Linear.easeNone,

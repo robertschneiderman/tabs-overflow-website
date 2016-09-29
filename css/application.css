@@ -30,6 +30,7 @@
 }
 
 .splash-section {
+  overflow: hidden;
   height: 40rem;
   background-color: #4F73A7;
 }
@@ -47,6 +48,7 @@
 
 .icon {
   /*animation: heart 3s ease 0s 1 normal forwards;*/
+  bottom: -100px;
   left: 50%;
   opacity: .5;
   position: absolute;
