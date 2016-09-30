@@ -48,9 +48,9 @@
 
 .icon {
   /*animation: heart 3s ease 0s 1 normal forwards;*/
-  bottom: -100px;
-  left: 50%;
+  /*bottom: -100px;*/
+  /*left: 50%;*/
   opacity: .5;
   position: absolute;
-  width: 5rem; 
+  /*width: 5rem; */
 }
