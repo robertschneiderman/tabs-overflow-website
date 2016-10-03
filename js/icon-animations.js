@@ -14,7 +14,6 @@
   };
 
   const randomOrigin = (icon) => {
-    debugger;
     let bottom = mr(-20, 50); 
     icon.style.bottom = `${bottom}%`;
 
@@ -25,24 +24,27 @@
       } else {
         icon.style.right = '-20%';
       }
-    }      
+    } else {
+      let left = mr(1, 99)
+      icon.style.left = `${left}%`;      
+    }   
   };
 
   const getHoOrigin = (icon) => {
     debugger;
-    if (icon.style) {
-      return 'right';
-    } else {
+    if (icon.style.left === '-20%') {
       return 'left';
+    } else if (icon.style.right === '-20%') {
+      return 'right';
     }
   };
 
   const getHoPath = (icon, prv, increment) => {
     hOrigin = getHoOrigin(icon);
 
-    if (hOrigin === 'right') {
+    if (hOrigin === 'left') {
       return mr(prv, prv + increment);
-    } else if (hOrigin === 'left') {
+    } else if (hOrigin === 'right') {
       return mr(prv, prv - increment);        
     }
   };     
@@ -71,8 +73,8 @@
     randomOrigin(icon);
 
     let x1 = mr(-30, 30);
-    let x2 = getHoPath(x1, 400);
-    let x3 = getHoPath(x2, 800);
+    let x2 = getHoPath(icon, x1, 400);
+    let x3 = getHoPath(icon, x2, 800);
     let y1 = mr(-30, 30);
     let y2 = mr(y1, y1 - 200);
     let y3 = mr(y2, y2 - 300);
