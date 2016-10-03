@@ -4,49 +4,57 @@
     return Math.floor((Math.random() * to) + frm);
   };
 
+  const mri = (frm, to) => {
+    return (Math.random() * to) + frm;
+  };  
+
   const randomBinary = () => {
     return mr(1, 2);
   };
 
   const randomDimensions = (icon) => {
-    icon.style.width = `${mr(4, 5)}rem`;   
-    icon.style.height = `${mr(4, 5)}rem`;       
+    let val = mri(3, 5);
+    icon.style.width = `${val}rem`;   
+    icon.style.height = `${val}rem`;       
+    // icon.style.width = `5.5rem`;   
+    // icon.style.height = `5.5rem`;    
   };
 
   const randomOrigin = (icon) => {
-    let bottom = mr(-20, 50); 
-    icon.style.bottom = `${bottom}%`;
+    // let bottom = mr(-20, 50); 
+    icon.style.bottom = `-20%`;
+    icon.style.left = `${mr(1, 90)}%`;
 
-    if (bottom > 0) {
-      let binary = randomBinary();
-      if (binary === 1) {
-        icon.style.left = '-20%';
-      } else {
-        icon.style.right = '-20%';
-      }
-    } else {
-      let left = mr(1, 99)
-      icon.style.left = `${left}%`;      
-    }   
+    // let binary = randomBinary();
+    // if (binary === 1) {
+    //   icon.style.left = `${mr(-10, 10)}%`;
+    // } else {
+    //   icon.style.right = `${mr(-10, 10)}%`;
+    // }  
   };
 
   const getHoOrigin = (icon) => {
-    debugger;
-    if (icon.style.left === '-20%') {
+    if (icon.style.right === '') {
       return 'left';
-    } else if (icon.style.right === '-20%') {
+    } else if (icon.style.left === '') {
       return 'right';
     }
   };
 
   const getHoPath = (icon, prv, increment) => {
     hOrigin = getHoOrigin(icon);
+    let binary = randomBinary();
 
     if (hOrigin === 'left') {
       return mr(prv, prv + increment);
     } else if (hOrigin === 'right') {
       return mr(prv, prv - increment);        
+    } else if (binary === 1) {
+      return mr(prv, prv - increment);
+    } else {
+      return mr(prv, prv + increment);
     }
+
   };     
   
   const randomDuration = (frm, to) => {
@@ -55,47 +63,74 @@
 
   const randomDelay = (frm, to) => {
     let randNum = mr(frm, to);
-    (randNum === 3) ? 0 : randNum
+    return (randNum === 3) ? 0 : randNum
   };
 
   const randomPercent = () => {
     return `${mr(1, 100)}%`;
-  };       
+  };
+
+  const placeIconRandomly = (icon) => {
+    icon.style.left = `${mr(0, 1300)}px`;
+    icon.style.top = `${mr(0, 700)}px`;
+  } 
+
+  const overlap = (newVec, oldVecs) => {
+    newVec = newVec.getBoundingClientRect();
+
+    for (var i = 0; i < oldVecs.length; i++) {
+      let oldVec = oldVecs[i].getBoundingClientRect();
+
+      if (!(newVec.right < oldVec.left || 
+      newVec.left > oldVec.right || 
+      newVec.bottom < oldVec.top || 
+      newVec.top > oldVec.bottom)) {
+        return true;
+      }
+    };
+    return false;
+  };
 
   let tm = new TimelineMax();
 
-  let icons = document.querySelectorAll('.icon');
+  let icons = Array.prototype.slice.call(document.querySelectorAll('.icon'));
 
   for (let i = 0; i < icons.length; i++) {
     let icon =  icons[i];
-
     randomDimensions(icon);
-    randomOrigin(icon);
 
-    let x1 = mr(-30, 30);
-    let x2 = getHoPath(icon, x1, 400);
-    let x3 = getHoPath(icon, x2, 800);
-    let y1 = mr(-30, 30);
-    let y2 = mr(y1, y1 - 200);
-    let y3 = mr(y2, y2 - 300);
-    let r1 = mr(-30, 30);
-    let r2 = mr(r1, r1 + 50);
-    let r3 = mr(r2, r2 + 50);
+    placeIconRandomly(icon);
 
-    tm.to(document.getElementById(icon.id), randomDuration(8, 10), {
-      bezier: {
-        type: "soft",
-        values: [
-          {x: x1, y: y1, rotation: r1},
-          {x: x2, y: y2, rotation: r2},
-          {x: x3, y: y3, rotation: r3}
-        ],
-        autoRotate: false
-      },
-      ease: Linear.easeNone,
-      repeat: 0
-    }, `start+=${randomDelay(1, 3)}`);
+    debugger;
 
+    iconsExcluding = icons.slice(0, i).concat(icons.slice(i+1));
 
+    while(overlap(icon, iconsExcluding)) {
+      placeIconRandomly(icon);      
+    }
+    
   };
+
+  for (let i = 0; i < icons.length; i++) {
+    // let time = (icons[i].getBoundingClientRect().top / 500);
+
+    TweenMax.to(icons[i], 7, {
+      top: "-=500",
+      rotation: `+=${mr(50, 150)}`,
+      ease: Linear.easeNone,
+      repeat: -1,
+    }, 0);    
+  }  
+
+  // const iconRise = () => {
+  //   tm.to(icons, 7, {
+  //     top: "-=500",
+  //     rotation: `+=${mr(50, 150)}`,
+  //     ease: Linear.easeNone,
+  //     repeat: 0,
+  //   }, 0);
+  // }
+
+  // iconRise();
+
 })();

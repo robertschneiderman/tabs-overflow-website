@@ -48,9 +48,12 @@
 
 .icon {
   /*animation: heart 3s ease 0s 1 normal forwards;*/
-  /*bottom: -100px;*/
+  bottom: -20%;
   /*left: 50%;*/
-  opacity: .3;
+  opacity: 0.1;
   position: absolute;
-  /*width: 5rem; */
+  height: 0rem;
+  width: 0rem;
+  padding: 2rem;
+  box-sizing: content-box;
 }

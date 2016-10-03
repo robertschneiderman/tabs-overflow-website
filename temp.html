@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description">
+    <meta name="author">
+    <title>Temp</title>
+
+    <style>
+      .icon {
+        position: absolute;
+      }
+      #badoo {
+        top: 200px;
+        width: 4rem;
+        height: 4rem;
+        padding: 3rem;
+      }
+      #bebo {
+        top: 265px;
+        width: 5rem;
+        height: 5rem;        
+      }
+    </style>
+
+</head>    
+
+<body>
+
+    <img id="badoo" class="icon" src="./icons/light-blue-icons/badoo.svg" alt="">
+    <img id="bebo" class="icon" src="./icons/light-blue-icons/bebo.svg" alt="">
+
+  <script>
+
+    const overlap = (newVec, oldVecs) => {
+      newVec = newVec.getBoundingClientRect();
+
+      for (var i = 0; i < oldVecs.length; i++) {
+        let oldVec = oldVecs[i].getBoundingClientRect();
+
+        debugger;
+
+        if (!(newVec.right < oldVec.left || 
+        newVec.left > oldVec.right || 
+        newVec.bottom < oldVec.top || 
+        newVec.top > oldVec.bottom)) {
+          return true;
+        }
+      };
+      return false;
+    };
+
+    let a = overlap(document.getElementById('badoo'), [document.getElementById('bebo')]);
+    console.log("a:", a);
+
+  </script>
+
+</body>
+</html>
