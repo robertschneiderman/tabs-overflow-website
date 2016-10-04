@@ -7,6 +7,7 @@
     <meta name="description">
     <meta name="author">
     <link rel="stylesheet" href="./css/application.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script> -->
     <title>Tabs Overflow</title>
@@ -29,77 +30,194 @@
 
   <section class="splash-section fbvc">
     <div class="splash-container fbvc">
-      <img class="splash-logo" src="./images/svg/logo.svg" alt="">
+      <img class="splash-logo" src="./images/svg/logo_light.svg" alt="">
       <button class="splash-btn">Download Tabs Overflow Chrome Extension</button>
     </div> 
 
-<!--     <img id="heart" class="icon" src="./icons/svg/heart.svg" alt="">
-    <img id="twitter" class="icon" src="./icons/svg/twitter-1.svg" alt="">
-    <img id="planet" class="icon" src="./icons/svg/planet-earth.svg" alt="">      
-    <img id="facebook" class="icon" src="./icons/svg/facebook.svg" alt="">      
-    <img id="foursquare" class="icon" src="./icons/svg/foursquare.svg" alt=""> 
-    <img id="dropbox" class="icon" src="./icons/svg/dropbox.svg" alt="">
- -->
+
+<!--     <div id="light-blue-icon-container">
+      <img id="badoo" class="icon" src="./icons/light-blue-icons/badoo.svg" alt="">
+      <img id="bebo" class="icon" src="./icons/light-blue-icons/bebo.svg" alt="">
+      <img id="behance" class="icon" src="./icons/light-blue-icons/behance.svg" alt="">
+      <img id="blogger" class="icon" src="./icons/light-blue-icons/blogger.svg" alt="">
+      <img id="deviantart" class="icon" src="./icons/light-blue-icons/deviantart.svg" alt="">
+      <img id="digg" class="icon" src="./icons/light-blue-icons/digg.svg" alt="">
+      <img id="disqus" class="icon" src="./icons/light-blue-icons/disqus.svg" alt="">
+      <img id="dribbble" class="icon" src="./icons/light-blue-icons/dribbble.svg" alt="">
+      <img id="facebook" class="icon" src="./icons/light-blue-icons/facebook.svg" alt="">
+      <img id="flickr" class="icon" src="./icons/light-blue-icons/flickr.svg" alt="">
+      <img id="forrst" class="icon" src="./icons/light-blue-icons/forrst.svg" alt="">
+      <img id="google-plus" class="icon" src="./icons/light-blue-icons/google-plus.svg" alt="">
+      <img id="instagram" class="icon" src="./icons/light-blue-icons/instagram.svg" alt="">
+      <img id="line" class="icon" src="./icons/light-blue-icons/line.svg" alt="">
+      <img id="linkedin" class="icon" src="./icons/light-blue-icons/linkedin.svg" alt="">
+      <img id="myspace" class="icon" src="./icons/light-blue-icons/myspace.svg" alt="">
+      <img id="pinterest" class="icon" src="./icons/light-blue-icons/pinterest.svg" alt="">
+      <img id="plurk" class="icon" src="./icons/light-blue-icons/plurk.svg" alt="">
+      <img id="rss" class="icon" src="./icons/light-blue-icons/rss.svg" alt="">
+      <img id="skype" class="icon" src="./icons/light-blue-icons/skype.svg" alt="">
+      <img id="telegram" class="icon" src="./icons/light-blue-icons/telegram.svg" alt="">
+      <img id="tumblr" class="icon" src="./icons/light-blue-icons/tumblr.svg" alt="">
+      <img id="twitter" class="icon" src="./icons/light-blue-icons/twitter.svg" alt="">
+      <img id="viber" class="icon" src="./icons/light-blue-icons/viber.svg" alt="">
+      <img id="vimeo" class="icon" src="./icons/light-blue-icons/vimeo.svg" alt="">
+      <img id="vine" class="icon" src="./icons/light-blue-icons/vine.svg" alt="">
+      <img id="vk" class="icon" src="./icons/light-blue-icons/vk.svg" alt="">
+    </div> -->
+
+<!--     <div id="line-icons-container">
+      <img id="amazon" class="icon" src="./icons/line/amazon.svg" alt="">
+      <img id="android" class="icon" src="./icons/line/android.svg" alt="">
+      <img id="apple" class="icon" src="./icons/line/apple.svg" alt="">
+      <img id="behance" class="icon" src="./icons/line/behance.svg" alt="">
+      <img id="blackberry" class="icon" src="./icons/line/blackberry.svg" alt="">
+      <img id="blogger" class="icon" src="./icons/line/blogger.svg" alt="">
+      <img id="deviantart" class="icon" src="./icons/line/deviantart.svg" alt="">
+      <img id="dribbble" class="icon" src="./icons/line/dribbble.svg" alt="">
+      <img id="dropbox" class="icon" src="./icons/line/dropbox.svg" alt="">
+      <img id="facebook" class="icon" src="./icons/line/facebook.svg" alt="">
+      <img id="flickr" class="icon" src="./icons/line/flickr.svg" alt="">
+      <img id="google-chrome" class="icon" src="./icons/line/google-chrome.svg" alt="">
+      <img id="google-drive" class="icon" src="./icons/line/google-drive.svg" alt="">
+      <img id="google-play" class="icon" src="./icons/line/google-play.svg" alt="">
+      <img id="google-plus" class="icon" src="./icons/line/google-plus.svg" alt="">
+      <img id="instagram" class="icon" src="./icons/line/instagram.svg" alt="">
+      <img id="internet-explorer" class="icon" src="./icons/line/internet-explorer.svg" alt="">
+      <img id="kickstarter" class="icon" src="./icons/line/kickstarter.svg" alt="">
+      <img id="linkedin" class="icon" src="./icons/line/linkedin.svg" alt="">
+      <img id="opera" class="icon" src="./icons/line/opera.svg" alt="">
+      <img id="instagram" class="icon" src="./icons/line/instagram.svg" alt="">
+      <img id="paypal" class="icon" src="./icons/line/paypal.svg" alt="">
+      <img id="picasa" class="icon" src="./icons/line/picasa.svg" alt="">
+      <img id="pinterest" class="icon" src="./icons/line/pinterest.svg" alt="">
+      <img id="reddit" class="icon" src="./icons/line/reddit.svg" alt="">
+      <img id="skype" class="icon" src="./icons/line/skype.svg" alt="">
+      <img id="snapchat" class="icon" src="./icons/line/snapchat.svg" alt="">
+      <img id="soundcloud" class="icon" src="./icons/line/soundcloud.svg" alt="">
+      <img id="steam" class="icon" src="./icons/line/steam.svg" alt="">
+      <img id="stumbleupon" class="icon" src="./icons/line/stumbleupon.svg" alt="">
+      <img id="tumblr" class="icon" src="./icons/line/tumblr.svg" alt="">
+      <img id="twitter" class="icon" src="./icons/line/twitter.svg" alt="">
+      <img id="viber" class="icon" src="./icons/line/viber.svg" alt="">
+      <img id="vimeo" class="icon" src="./icons/line/vimeo.svg" alt="">
+      <img id="vine" class="icon" src="./icons/line/vine.svg" alt="">
+      <img id="whatsapp" class="icon" src="./icons/line/whatsapp.svg" alt="">
+      <img id="windows" class="icon" src="./icons/line/windows.svg" alt="">
+      <img id="wordpress" class="icon" src="./icons/line/wordpress.svg" alt="">
+      <img id="yahoo" class="icon" src="./icons/line/yahoo.svg" alt="">
+      <img id="yelp" class="icon" src="./icons/line/yelp.svg" alt="">
+      <img id="youtube" class="icon" src="./icons/line/youtube.svg" alt="">
+    </div> -->
+
+      <img id="vk" class="icon" src="./icons/handmade/500pc-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/51-on-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/56-drawn-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/ads-of-the-world-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/arte10-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/ashley-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/badoo-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/baidu-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/bandcamp-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/bebo-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/behance-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/bisquits-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/bitacoras-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/blackplanet-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/blogger-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/bloson-draw-logo.svg" alt="">
+      <img id="vk" class="icon" src="./icons/handmade/caring-bridge-logo.svg" alt="">
+      <img id="classmates" class="icon" src="./icons/handmade/classmates-logo.svg" alt="">
+      <img id="cross-tv-draw" class="icon" src="./icons/handmade/cross-tv-draw-logo.svg" alt="">
+      <img id="delicious-drawn" class="icon" src="./icons/handmade/delicious-drawn-logo.svg" alt="">
+      <img id="desarrollo-web-drawn" class="icon" src="./icons/handmade/desarrollo-web-drawn-logo.svg" alt="">
+      <img id="digg-draw" class="icon" src="./icons/handmade/digg-draw-logo.svg" alt="">
+      <img id="divoblogger-drawn" class="icon" src="./icons/handmade/divoblogger-drawn-logo.svg" alt="">
+      <img id="etsy-drawn" class="icon" src="./icons/handmade/etsy-drawn-logo.svg" alt="">
+      <img id="everloop-logo" class="icon" src="./icons/handmade/everloop-logo.svg" alt="">
+      <img id="facebook-drawn" class="icon" src="./icons/handmade/facebook-drawn-logo.svg" alt="">
+      <img id="fanlala-logo" class="icon" src="./icons/handmade/fanlala-logo.svg" alt="">
+      <img id="flickr-logo" class="icon" src="./icons/handmade/flickr-logo.svg" alt="">
+      <img id="flipkart-drawn-logo" class="icon" src="./icons/handmade/flipkart-drawn-logo.svg" alt="">
+      <img id="flixster-draw-logo" class="icon" src="./icons/handmade/flixster-draw-logo.svg" alt="">
+      <img id="fod-draw-logo" class="icon" src="./icons/handmade/fod-draw-logo.svg" alt="">
+      <img id="fontli-draw-logo" class="icon" src="./icons/handmade/fontli-draw-logo.svg" alt="">
+      <img id="fotki-draw-logo" class="icon" src="./icons/handmade/fotki-draw-logo.svg" alt="">
+      <img id="fotolog-logo" class="icon" src="./icons/handmade/fotolog-logo.svg" alt="">
+      <img id="friendster-logo" class="icon" src="./icons/handmade/friendster-logo.svg" alt="">
+      <img id="geni-draw-logo" class="icon" src="./icons/handmade/geni-draw-logo.svg" alt="">
+      <img id="glipho-drawn-logo" class="icon" src="./icons/handmade/glipho-drawn-logo.svg" alt="">
+      <img id="glogster-draw-logo" class="icon" src="./icons/handmade/glogster-draw-logo.svg" alt="">
+      <img id="google-plus-draw-logo" class="icon" src="./icons/handmade/google-plus-draw-logo.svg" alt="">
+      <img id="grooveshark-draw-logo" class="icon" src="./icons/handmade/grooveshark-draw-logo.svg" alt="">
+      <img id="habbo-logo" class="icon" src="./icons/handmade/habbo-logo.svg" alt="">
+      <img id="heello-draw-logo" class="icon" src="./icons/handmade/heello-draw-logo.svg" alt="">
+      <img id="hexun-logo" class="icon" src="./icons/handmade/hexun-logo.svg" alt="">
+      <img id="hi5-drawn-logo" class="icon" src="./icons/handmade/hi5-drawn-logo.svg" alt="">
+      <img id="hubbub-draw-logo" class="icon" src="./icons/handmade/hubbub-draw-logo.svg" alt="">
+      <img id="instagram-draw-logo" class="icon" src="./icons/handmade/instagram-draw-logo.svg" alt="">
+      <img id="iqyi-draw-logo" class="icon" src="./icons/handmade/iqyi-draw-logo.svg" alt="">
+      <img id="jux-drawn-logo" class="icon" src="./icons/handmade/jux-drawn-logo.svg" alt="">
+      <img id="ku6-draw-logo" class="icon" src="./icons/handmade/ku6-draw-logo.svg" alt="">
+      <img id="lastfm-draw-logo" class="icon" src="./icons/handmade/lastfm-draw-logo.svg" alt="">
+      <img id="linkedin-draw-logo" class="icon" src="./icons/handmade/linkedin-draw-logo.svg" alt="">
+      <img id="literatura-nova-logo" class="icon" src="./icons/handmade/literatura-nova-logo.svg" alt="">
+      <img id="meetic-draw-logo" class="icon" src="./icons/handmade/meetic-draw-logo.svg" alt="">
+      <img id="meetme-logo" class="icon" src="./icons/handmade/meetme-logo.svg" alt="">
+      <img id="mi-life-draw-logo" class="icon" src="./icons/handmade/mi-life-draw-logo.svg" alt="">
+      <img id="mocospace-drawn-logo" class="icon" src="./icons/handmade/mocospace-drawn-logo.svg" alt="">
+      <img id="myfolio-draw-logo" class="icon" src="./icons/handmade/myfolio-draw-logo.svg" alt="">
+      <img id="nk-drawn-logo" class="icon" src="./icons/handmade/nk-drawn-logo.svg" alt="">
+      <img id="orkut-draw-logo" class="icon" src="./icons/handmade/orkut-draw-logo.svg" alt="">
+      <img id="p1-draw-logo" class="icon" src="./icons/handmade/p1-draw-logo.svg" alt="">
+      <img id="path-draw-logo" class="icon" src="./icons/handmade/path-draw-logo.svg" alt="">
+      <img id="pengyou-logo" class="icon" src="./icons/handmade/pengyou-logo.svg" alt="">
+      <img id="pheed-logo" class="icon" src="./icons/handmade/pheed-logo.svg" alt="">
+      <img id="pictify-draw-logo" class="icon" src="./icons/handmade/pictify-draw-logo.svg" alt="">
+      <img id="pinspire-draw-logo" class="icon" src="./icons/handmade/pinspire-draw-logo.svg" alt="">
+      <img id="pinterest-drawn-logo" class="icon" src="./icons/handmade/pinterest-drawn-logo.svg" alt="">
+      <img id="podio-logo" class="icon" src="./icons/handmade/podio-logo.svg" alt="">
+      <img id="questionity-draw-logo" class="icon" src="./icons/handmade/questionity-draw-logo.svg" alt="">
+      <img id="qzone-draw-logo" class="icon" src="./icons/handmade/qzone-draw-logo.svg" alt="">
+      <img id="ravelry-draw-logo" class="icon" src="./icons/handmade/ravelry-draw-logo.svg" alt="">
+      <img id="redalyc-draw-logo" class="icon" src="./icons/handmade/redalyc-draw-logo.svg" alt="">
+      <img id="renren-draw-logo" class="icon" src="./icons/handmade/renren-draw-logo.svg" alt="">
+      <img id="researchgate-draw-logo" class="icon" src="./icons/handmade/researchgate-draw-logo.svg" alt="">
+      <img id="reverbnation-logo" class="icon" src="./icons/handmade/reverbnation-logo.svg" alt="">
+      <img id="ryze-draw-logo" class="icon" src="./icons/handmade/ryze-draw-logo.svg" alt="">
+      <img id="ryze-drawing-logo" class="icon" src="./icons/handmade/ryze-drawing-logo.svg" alt="">
+      <img id="scoop-it-draw-logo" class="icon" src="./icons/handmade/scoop-it-draw-logo.svg" alt="">
+      <img id="scribd-drawn-logo" class="icon" src="./icons/handmade/scribd-drawn-logo.svg" alt="">
+      <img id="skyrock-draw-logo" class="icon" src="./icons/handmade/skyrock-draw-logo.svg" alt="">
+      <img id="slideshare-draw-logo" class="icon" src="./icons/handmade/slideshare-draw-logo.svg" alt="">
+      <img id="sonico-draw-logo" class="icon" src="./icons/handmade/sonico-draw-logo.svg" alt="">
+      <img id="soundcloud-logo" class="icon" src="./icons/handmade/soundcloud-logo.svg" alt="">
+      <img id="spotbros-logo" class="icon" src="./icons/handmade/spotbros-logo.svg" alt="">
+      <img id="spotify-draw-logo" class="icon" src="./icons/handmade/spotify-draw-logo.svg" alt="">
+      <img id="studivz-logo" class="icon" src="./icons/handmade/studivz-logo.svg" alt="">
+      <img id="stumble-upon-drawn-logo" class="icon" src="./icons/handmade/stumble-upon-drawn-logo.svg" alt="">
+      <img id="tagworld-logo" class="icon" src="./icons/handmade/tagworld-logo.svg" alt="">
+      <img id="tianji-draw-logo" class="icon" src="./icons/handmade/tianji-draw-logo.svg" alt="">
+      <img id="tmblr-draw-logo" class="icon" src="./icons/handmade/tmblr-draw-logo.svg" alt="">
+      <img id="tribe-draw-logo" class="icon" src="./icons/handmade/tribe-draw-logo.svg" alt="">
+      <img id="tv-tag-logo" class="icon" src="./icons/handmade/tv-tag-logo.svg" alt="">
+      <img id="twitpic-draw-logo" class="icon" src="./icons/handmade/twitpic-draw-logo.svg" alt="">
+      <img id="twitter-draw-logo" class="icon" src="./icons/handmade/twitter-draw-logo.svg" alt="">
+      <img id="twitter-logo" class="icon" src="./icons/handmade/twitter-logo.svg" alt="">
+      <img id="twoo-logo" class="icon" src="./icons/handmade/twoo-logo.svg" alt="">
+      <img id="twoo-logotype" class="icon" src="./icons/handmade/twoo-logotype.svg" alt="">
+      <img id="typophile-draw-logo" class="icon" src="./icons/handmade/typophile-draw-logo.svg" alt="">
+      <img id="ushi-draw-logo" class="icon" src="./icons/handmade/ushi-draw-logo.svg" alt="">
+      <img id="vampirefreaks-draw-logo" class="icon" src="./icons/handmade/vampirefreaks-draw-logo.svg" alt="">
+      <img id="vimeo-logo" class="icon" src="./icons/handmade/vimeo-logo.svg" alt="">
+      <img id="vk-draw-logo" class="icon" src="./icons/handmade/vk-draw-logo.svg" alt="">
+      <img id="wayn-logo" class="icon" src="./icons/handmade/wayn-logo.svg" alt="">
+      <img id="webnotes-draw" class="icon" src="./icons/handmade/webnotes-draw.svg" alt="">
+      <img id="weheartit-draw-logo" class="icon" src="./icons/handmade/weheartit-draw-logo.svg" alt="">
+      <img id="weibo-logo" class="icon" src="./icons/handmade/weibo-logo.svg" alt="">
+      <img id="wordpress-draw-logo" class="icon" src="./icons/handmade/wordpress-draw-logo.svg" alt="">
+      <img id="xanga-draw-logo" class="icon" src="./icons/handmade/xanga-draw-logo.svg" alt="">
 
 
-<!--     <img id="badoo" class="icon" src="./icons/light-blue-icons/badoo.svg" alt="">
-    <img id="bebo" class="icon" src="./icons/light-blue-icons/bebo.svg" alt="">
-    <img id="behance" class="icon" src="./icons/light-blue-icons/behance.svg" alt="">
-    <img id="blogger" class="icon" src="./icons/light-blue-icons/blogger.svg" alt="">
-    <img id="deviantart" class="icon" src="./icons/light-blue-icons/deviantart.svg" alt="">
-    <img id="digg" class="icon" src="./icons/light-blue-icons/digg.svg" alt="">
-    <img id="disqus" class="icon" src="./icons/light-blue-icons/disqus.svg" alt="">
-    <img id="dribbble" class="icon" src="./icons/light-blue-icons/dribbble.svg" alt="">
-    <img id="facebook" class="icon" src="./icons/light-blue-icons/facebook.svg" alt="">
-    <img id="flickr" class="icon" src="./icons/light-blue-icons/flickr.svg" alt="">
-    <img id="forrst" class="icon" src="./icons/light-blue-icons/forrst.svg" alt="">
-    <img id="google-plus" class="icon" src="./icons/light-blue-icons/google-plus.svg" alt="">
-    <img id="instagram" class="icon" src="./icons/light-blue-icons/instagram.svg" alt="">
-    <img id="line" class="icon" src="./icons/light-blue-icons/line.svg" alt="">
-    <img id="linkedin" class="icon" src="./icons/light-blue-icons/linkedin.svg" alt="">
-    <img id="myspace" class="icon" src="./icons/light-blue-icons/myspace.svg" alt="">
-    <img id="pinterest" class="icon" src="./icons/light-blue-icons/pinterest.svg" alt="">
-    <img id="plurk" class="icon" src="./icons/light-blue-icons/plurk.svg" alt="">
-    <img id="rss" class="icon" src="./icons/light-blue-icons/rss.svg" alt="">
-    <img id="skype" class="icon" src="./icons/light-blue-icons/skype.svg" alt="">
-    <img id="telegram" class="icon" src="./icons/light-blue-icons/telegram.svg" alt="">
-    <img id="tumblr" class="icon" src="./icons/light-blue-icons/tumblr.svg" alt="">
-    <img id="twitter" class="icon" src="./icons/light-blue-icons/twitter.svg" alt="">
-    <img id="viber" class="icon" src="./icons/light-blue-icons/viber.svg" alt="">
-    <img id="vimeo" class="icon" src="./icons/light-blue-icons/vimeo.svg" alt="">
-    <img id="vine" class="icon" src="./icons/light-blue-icons/vine.svg" alt="">
-    <img id="vk" class="icon" src="./icons/light-blue-icons/vk.svg" alt=""> -->
-    
-
-    <img id="amazon" class="icon" src="./icons/line/amazon.svg" alt="">
-    <img id="android" class="icon" src="./icons/line/android.svg" alt="">
-    <img id="apple" class="icon" src="./icons/line/apple.svg" alt="">
-    <img id="behance" class="icon" src="./icons/line/behance.svg" alt="">
-    <img id="blackberry" class="icon" src="./icons/line/blackberry.svg" alt="">
-    <img id="blogger" class="icon" src="./icons/line/blogger.svg" alt="">
-    <img id="deviantart" class="icon" src="./icons/line/deviantart.svg" alt="">
-    <img id="dribbble" class="icon" src="./icons/line/dribbble.svg" alt="">
-    <img id="dropbox" class="icon" src="./icons/line/dropbox.svg" alt="">
-    <img id="facebook" class="icon" src="./icons/line/facebook.svg" alt="">
-    <img id="flickr" class="icon" src="./icons/line/flickr.svg" alt="">
-    <img id="google-chrome" class="icon" src="./icons/line/google-chrome.svg" alt="">
-    <img id="google-drive" class="icon" src="./icons/line/google-drive.svg" alt="">
-    <img id="google-play" class="icon" src="./icons/line/google-play.svg" alt="">
-    <img id="google-plus" class="icon" src="./icons/line/google-plus.svg" alt="">
-    <img id="instagram" class="icon" src="./icons/line/instagram.svg" alt="">
-    <img id="internet-explorer" class="icon" src="./icons/line/internet-explorer.svg" alt="">
-    <img id="kickstarter" class="icon" src="./icons/line/kickstarter.svg" alt="">
-    <img id="linkedin" class="icon" src="./icons/line/linkedin.svg" alt="">
-    <img id="opera" class="icon" src="./icons/line/opera.svg" alt="">
-    <img id="instagram" class="icon" src="./icons/line/instagram.svg" alt="">
-    <img id="paypal" class="icon" src="./icons/line/paypal.svg" alt="">
-    <img id="picasa" class="icon" src="./icons/line/picasa.svg" alt="">
-    <img id="pinterest" class="icon" src="./icons/line/pinterest.svg" alt="">
-    <img id="reddit" class="icon" src="./icons/line/reddit.svg" alt="">
-    <img id="skype" class="icon" src="./icons/line/skype.svg" alt="">
-    <img id="snapchat" class="icon" src="./icons/line/snapchat.svg" alt="">
-    <img id="soundcloud" class="icon" src="./icons/line/soundcloud.svg" alt="">
-    <img id="steam" class="icon" src="./icons/line/steam.svg" alt="">
   </section>
   
   <script src="./js/icon-animations.js"></script>

@@ -50,10 +50,14 @@
   /*animation: heart 3s ease 0s 1 normal forwards;*/
   bottom: -20%;
   /*left: 50%;*/
-  opacity: 0.1;
+  opacity: .12;
   position: absolute;
   height: 0rem;
   width: 0rem;
-  padding: 2rem;
-  box-sizing: content-box;
+  padding: 1.5rem;
+  /*box-sizing: content-box;*/
+}
+
+.icon {
+  fill: red;
 }
