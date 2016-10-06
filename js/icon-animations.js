@@ -109,55 +109,53 @@
 
   let icons = Array.prototype.slice.call(document.querySelectorAll('.icon'));
 
-  for (let i = 0; i < icons.length; i++) {
-    let icon =  icons[i];
-    randomDimensions(icon);
+  // for (let i = 0; i < icons.length; i++) {
+  //   let icon =  icons[i];
+  //   randomDimensions(icon);
 
-    placeIconRandomly(icon);    
+  //   placeIconRandomly(icon);    
 
-    if (i === icons.length) debugger;
+  //   if (i === icons.length) debugger;
 
-    iconsExcluding = icons.slice(0, i).concat(icons.slice(i+1));
+  //   iconsExcluding = icons.slice(0, i).concat(icons.slice(i+1));
 
-    let j = 0;
-    while(overlap(icon, iconsExcluding)) {
-      // debugger;
-      if ((j >= 3) && (dimensionInteger(icon.style.width) > 6.5)) {
-        sizeDown(icon);
-        j = 0;
-      }
-      if (dimensionInteger(icon.style.width) < 6.5) {
-        icon.style.width = `4rem`
-        icon.style.height = `4rem`
-      }      
-      placeIconRandomly(icon);
-      j++
-    }
+  //   let j = 0;
+  //   while(overlap(icon, iconsExcluding)) {
+  //     // debugger;
+  //     if ((j >= 3) && (dimensionInteger(icon.style.width) > 6.5)) {
+  //       sizeDown(icon);
+  //       j = 0;
+  //     }
+  //     if (dimensionInteger(icon.style.width) < 6.5) {
+  //       icon.style.width = `4rem`
+  //       icon.style.height = `4rem`
+  //     }      
+  //     placeIconRandomly(icon);
+  //     j++
+  //   }
     
-  };
+  // };
 
-  // const animateIcons = () => {
-    for (let i = 0; i < icons.length; i++) {
-      let time = (icons[i].getBoundingClientRect().top / 500);
+    // for (let i = 0; i < icons.length; i++) {
+    //   let time = (icons[i].getBoundingClientRect().top / 500);
 
-      // icons[i].getBoundingClientRect().top
+    //   // icons[i].getBoundingClientRect().top
 
-      TweenMax.to(icons[i], 32, {
-        top: "-=1900",
-        rotation: `+=${mr(350, 450)}`,
-        ease: Linear.easeNone,
-        repeat: -1,
-      }, 0);    
-    }
-  // }
+    //   TweenMax.to(icons[i], 32, {
+    //     top: "-=1900",
+    //     rotation: `+=${mr(350, 450)}`,
+    //     ease: Linear.easeNone,
+    //     repeat: -1,
+    //   }, 0);    
+    // }
 
   // setInterval(animateIcons, 28000);
 
-  let k = 0
-  setInterval(() => {
-    console.log("k:", 1);
-    k++
-  }, 1000);
+  // let k = 0
+  // setInterval(() => {
+  //   console.log("k:", 1);
+  //   k++
+  // }, 1000);
 
 
   // jQuery('img.icon').each(function(){
@@ -187,7 +185,95 @@
 
   //     }, 'xml');
 
-  // });  
+  // });
+
+  const creationWaypoint = () => {
+    let waypoint = new Waypoint({
+      element: document.getElementById('ot-creation'),
+      handler: () => {
+        animateOTCreation();
+        debugger;
+        waypoint.destroy();
+      },
+      offset: '75%'    
+    });
+  };
+
+  const listingWaypoint = () => {
+    let waypoint2 = new Waypoint({
+      element: document.getElementById('ot-listing'),
+      handler: () => {
+        animateOTListing();
+        debugger;
+        waypoint2.destroy();
+      },
+      offset: '75%'    
+    }); 
+  }   
+
+  $("#ot-creation").load("./images/svg/tab_overflow_creation_4.svg", creationWaypoint);
+
+  $("#ot-listing").load("./images/svg/overflow_tab_listing.svg", listingWaypoint);
+
+  $("#ot-listing").load("./images/svg/safe_tabs.svg", listingWaypoint);
+
+
+  const animateOTCreation = () => {
+    let tl = new TimelineMax;
+
+    tl.to(document.getElementById('overflow-tab'), .3, {
+      y: -25,
+      ease: Linear.easeNone,
+      repeat: 0,
+    }, 0).to(document.getElementById('flash-start'), .3, {
+      scaleY: 11,
+      scaleX: 12,
+      transformOrigin:'5% 63%',
+      ease: Linear.easeNone,
+      repeat: 0,
+    }).from(document.getElementById('magnified'), .8, {
+      x: -10,
+      opacity: 0,
+      ease: Linear.easeIn,
+      repeat: 0,
+    });    
+  };
+
+  const animateOTListing = () => {
+    let tl = new TimelineMax;
+
+    tl.from(document.getElementById('bing'), .6, {
+      scale: .5,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%',      
+    }).from(document.getElementById('youtube-1'), .6, {
+      scale: .5,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%',      
+    }).from(document.getElementById('facebook'), .6, {
+      scale: .5,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%'
+    }).from(document.getElementById('youtube-2'), .6, {
+      scale: .5,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%'      
+    });    
+  };    
+
+
+
+
+  
+
 
 
 })();
