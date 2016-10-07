@@ -26,6 +26,9 @@
   background-color: #e6ffe6;
   padding: 1rem 2rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-description {color: #999;}
@@ -189,4 +192,16 @@
   background-size: cover;
   background-position: 50% 50%;
   padding: 6rem 3rem;
+}
+
+.sm-icon-container {
+
+}
+
+.sm-icon-facebook {
+  margin-right: 0.4rem;
+  width: 2rem;
+}
+.sm-icon-github {
+  width: 2rem;
 }
