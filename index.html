@@ -15,11 +15,11 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script> -->
     <title>Tabs Overflow</title>
 
-    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:url"           content="http://www.tabsoverflow.com/your-page.html" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Your Website Title" />
-    <meta property="og:description"   content="Your description" />
-    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />    
+    <meta property="og:title"         content="Here is an elegant solution to you 'too many tabs' problem" />
+    <meta property="og:description"   content="TabsOverflow is a Chrome extension that will intelligently help you control. Many power users are using it to revolutionize the way they use Chrome" />
+    <meta property="og:image"         content="http://www.tabsoverflow.com/images/svg/facebook_icon_reversed.svg" />    
 
 </head>    
 
@@ -263,23 +263,45 @@
   <section class="share-section">
     <header class="header-container header-container-share">
       <h2 class="header-title header-share">Have a friend who opens to many tabs???</h2>
-      <button class="btn-share" 
-        data-href="http://www.tabsoverflow.com" 
-        data-layout="button_count">
+      <button id="fb-share-btn" class="btn-share" 
         <img class="btn-img" src="./images/svg/facebook_logo_reversed.svg" />
         <span class="btn-text">Share With Friend</span>
-      </button>      
+      </button>         
     </header>
   </section>
 
+  <section class="footer">
+    <p class="footer-description">©2015, TabsOverflow.com</p>
+  </section>
+
   <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>  
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1809709219312913',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      document.getElementById('fb-share-btn').addEventListener('click', () => {
+        FB.ui(
+         {
+          method: 'share',
+          href: 'tabsoverflow.com',
+          title: `Have a "too many tabs" problem?`,
+          description: 'TabsOverflow is a Chrome extension that will intelligently help you manage how many tabs you have open at once. Many Chrome power users are using it to revolutionize the way they use Chrome'
+        }, function(response){});
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>    
   
   <script src="./js/icon-animations.js"></script>
 

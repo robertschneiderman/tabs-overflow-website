@@ -4,8 +4,10 @@
 .btn-share {
   background-color: #4d6fa9;
   color: #fff;
+  display: inline-block;
   padding: 1rem 1.3rem;
   font-size: 1.3rem;
+  font-family: "Lato";
 }
 
 .btn-text {
@@ -19,6 +21,14 @@
   vertical-align: middle;
   width: 2.5rem;
 }
+
+.footer {
+  background-color: #e6ffe6;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.footer-description {color: #999;}
 
 .header-container {
   margin-bottom: 0rem;

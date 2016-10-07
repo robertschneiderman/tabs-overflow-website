@@ -14,14 +14,14 @@ h1, h2, h3, p, ul, ol, li {
   font-family: "Lato";
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], .btn-share {
   background: none;
   border: none;
   cursor: pointer;
   transition: filter .3s, -webkit-filter .3s;
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover, input[type="submit"]:hover, .btn-share:hover {
   filter: brightness(85%);  
   -webkit-filter: brightness(85%);  
 }

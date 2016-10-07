@@ -318,7 +318,7 @@
       y: '200%',
       ease: Power1.easeOut,
       repeat: 0,
-    }).from('#lock-one', .4, {
+    }, '-=.2').from('#lock-one', .4, {
       scale: 0,
       opacity: 0,
       ease: Bounce.easeOut,
