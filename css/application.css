@@ -1,7 +1,42 @@
 @import url('defaults.css');
 @import url('helpers.css');
 
-.header {color: #888;font-size: 3rem;text-align: center;margin-bottom: 4rem;}
+.btn-share {
+  background-color: #4d6fa9;
+  color: #fff;
+  padding: 1rem 1.3rem;
+  font-size: 1.3rem;
+}
+
+.btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-img {
+  display: inline-block;
+  margin-right: .5rem;
+  vertical-align: middle;
+  width: 2.5rem;
+}
+
+.header-container {
+  margin-bottom: 0rem;
+  top: 6rem;
+}
+
+.header-container-share {text-align: center;top: 0;}
+
+.header-title {color: #888;font-size: 3rem;text-align: center;}
+
+.header-subtitle {color: #aaa;font-size: 1.2rem;text-align: center;line-height: 1.5;width: 36rem;margin: 0 auto;}
+
+.header-share {
+  font-family: Bariol;
+  color: #fff;
+  margin-bottom: 3rem;
+  /* top: -8rem; */
+}
 
 .section {
   padding: 2rem 3rem;  
@@ -9,7 +44,7 @@
 
 .container {
   margin: 0 auto;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -20,8 +55,7 @@
 }
 
 .header-title {
-  font-family: Arvo;
-  color: #4d6469;
+  /* font-family: Arvo; */
 }
 
 .nav {
@@ -68,29 +102,64 @@
   fill: red;
 }
 
-.how-to-section {padding: 5rem 3rem;}
+.how-to-section {padding: 1rem 0rem 0rem;}
 
 .how-to-container {
-  margin: 0px 0 9rem 5%;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0rem 5% 0rem 0;
+  /* padding-bottom: 23rem; */
+  width: 100%;
+  height: 766px;
+  align-items: center;
+}
+
+.listing-container {
+  background-color: #fafafa;
+  width: 100%;
+  padding: 0rem 0 0rem 5%;
+}
+
+.safe-tab-container {
+  border-bottom: 0;
+  /* background-color: #fafafa; */
+  width: 100%;
 }
 
 .how-to-header {
   font-family: Bariol;
+  margin-bottom: 0.7rem;
 }
 
 .how-to-img {
+  visibility: hidden;
   width: 47%;
 }
 
-.how-to-creation {align-self: flex-end;}
+.how-to-creation {/* align-self: flex-end; */left: 2%;width: 52%;}
 
-.how-to-text {top: 5rem;width: 45%;}
+.how-to-listing {width: 50%;}
 
-.how-to-title {font-family: Bariol;color: #6db6ce;margin-bottom: 0.3rem;font-size: 1.8rem;}
+.how-to-safe-tabs {
+  left: 2%;
+}
+
+.how-to-text:not(.how-to-listing-text) {/* top: 5rem; */left: 10rem;width: 40%;opacity: 0;transition: all .6s;}
+
+.how-to-listing-text {
+  /* top: 5rem; */
+  width: 40%;
+  opacity: 0;
+  transition: all .6s;
+  right: 10rem;
+}
+
+.how-to-title {text-transform: uppercase;font-size: 1.1rem;font-family: Bariol;color: #6db6ce;margin-bottom: 0.3rem;/* font-size: 1.8rem; */}
 
 .how-to-par {
+  /* font-family: Bariol; */
+  font-size: 1.5rem;
   color: #b7b7b7;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   font-size: 1.3rem;
 }
@@ -101,4 +170,13 @@
 
 #flash {
   width: 0%;
+}
+
+.share-section {
+  background-color: #7dc5c5;
+  /* background-image: url('../images/blue_gradient.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 6rem 3rem;
 }

@@ -15,6 +15,12 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script> -->
     <title>Tabs Overflow</title>
 
+    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />    
+
 </head>    
 
 <body>
@@ -224,7 +230,10 @@
   </section>
 
   <section class="section how-to-section">
-    <h2 class="header how-to-header">How To Use</h2>
+    <header class="header-container">
+      <h2 class="header-title how-to-header">How To Use</h2>
+      <p class="header-subtitle">Tabs overflow is a very easy to use extension that requires just a few minutes to learn!</p>
+    </header>
 
     <div class="container how-to-container">
       <div id="ot-creation" class="how-to-img how-to-creation"></div>
@@ -234,22 +243,43 @@
       </div>
     </div>
 
-    <div class="container how-to-container">
-      <div class="text how-to-text">
+    <div class="container how-to-container listing-container">
+      <div class="text how-to-listing-text how-to-text">
         <h3 class="title how-to-title">Overflow Tab Listing</h3>
-        <p class="par how-to-par">The Overflow Tab gets created when a 9th tab is opened. Every subsequent tab opening.</p>
+        <p class="par how-to-par">The Overflow Tab lists all tabs opened after your 8th tab and lets you swap opened tabs and closed tabs by clicking on links</p>
       </div>
       <div id="ot-listing" class="how-to-img how-to-listing"></div>      
     </div>
 
-    <div class="container how-to-container">
+    <div class="container how-to-container safe-tab-container">
+      <div id="ot-safe-tabs" class="how-to-img how-to-safe-tabs"></div>      
       <div class="text how-to-text">
-        <div id="ot-safe-tabs" class="how-to-img how-to-safe-tabs"></div>      
         <h3 class="title how-to-title">Safe Tabs</h3>
         <p class="par how-to-par">Choose which tabs you want to prevent from moving down towards the overflow tab</p>
       </div>      
     </div>          
   </section>
+
+  <section class="share-section">
+    <header class="header-container header-container-share">
+      <h2 class="header-title header-share">Have a friend who opens to many tabs???</h2>
+      <button class="btn-share" 
+        data-href="http://www.tabsoverflow.com" 
+        data-layout="button_count">
+        <img class="btn-img" src="./images/svg/facebook_logo_reversed.svg" />
+        <span class="btn-text">Share With Friend</span>
+      </button>      
+    </header>
+  </section>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>  
   
   <script src="./js/icon-animations.js"></script>
 

@@ -139,8 +139,6 @@
     // for (let i = 0; i < icons.length; i++) {
     //   let time = (icons[i].getBoundingClientRect().top / 500);
 
-    //   // icons[i].getBoundingClientRect().top
-
     //   TweenMax.to(icons[i], 32, {
     //     top: "-=1900",
     //     rotation: `+=${mr(350, 450)}`,
@@ -190,10 +188,10 @@
   const creationWaypoint = () => {
     let waypoint = new Waypoint({
       element: document.getElementById('ot-creation'),
-      handler: () => {
+      handler: function() {
+        this.element.style.visibility = 'visible';
         animateOTCreation();
-        debugger;
-        waypoint.destroy();
+        this.destroy();
       },
       offset: '75%'    
     });
@@ -202,78 +200,166 @@
   const listingWaypoint = () => {
     let waypoint2 = new Waypoint({
       element: document.getElementById('ot-listing'),
-      handler: () => {
+      handler: function() {
+        this.element.style.visibility = 'visible';        
         animateOTListing();
-        debugger;
-        waypoint2.destroy();
+        this.destroy();
       },
       offset: '75%'    
     }); 
-  }   
+  };
 
-  $("#ot-creation").load("./images/svg/tab_overflow_creation_4.svg", creationWaypoint);
+  const safeTabWaypoint = () => {
+    let waypoint3 = new Waypoint({
+      element: document.getElementById('ot-safe-tabs'),
+      handler: function() {
+        this.element.style.visibility = 'visible';        
+        animateSafeTabs();
+        this.destroy();
+      },
+      offset: '75%'    
+    }); 
+  };
+
+  const textWaypoint = () => {
+    Array.from(document.getElementsByClassName('how-to-text')).forEach((el, i) => {
+      new Waypoint({
+        element: el,
+        handler: function() {
+          this.element.style.opacity = 1;
+          if (i === 1)
+            this.element.style.right = '0rem';
+          else {
+            this.element.style.left = '0rem';
+          }
+        },
+        offset: '75%'
+      });
+    });
+  };
+  textWaypoint();
+
+  $("#ot-creation").load("./images/svg/tabs_overflow_creation.svg", creationWaypoint);
 
   $("#ot-listing").load("./images/svg/overflow_tab_listing.svg", listingWaypoint);
 
-  $("#ot-listing").load("./images/svg/safe_tabs.svg", listingWaypoint);
+  $("#ot-safe-tabs").load("./images/svg/safe_tabs.svg", safeTabWaypoint);
 
 
   const animateOTCreation = () => {
     let tl = new TimelineMax;
 
-    tl.to(document.getElementById('overflow-tab'), .3, {
+    tl.from('#ot-creation-svg', .6, {
+      x: -200,
+      opacity: 0
+    }).to('#overflow-tab', .3, {
       y: -25,
       ease: Linear.easeNone,
-      repeat: 0,
-    }, 0).to(document.getElementById('flash-start'), .3, {
+    }, 0).to('#flash-start', .3, {
       scaleY: 11,
       scaleX: 12,
       transformOrigin:'5% 63%',
       ease: Linear.easeNone,
-      repeat: 0,
-    }).from(document.getElementById('magnified'), .8, {
+    }).from('#magnified', .8, {
       x: -10,
+      display: 'block',
       opacity: 0,
       ease: Linear.easeIn,
-      repeat: 0,
     });    
   };
 
   const animateOTListing = () => {
     let tl = new TimelineMax;
 
-    tl.from(document.getElementById('bing'), .6, {
+    tl.from('#ot-listing-svg', .6, {
+      x: 200,
+      opacity: 0
+    }).from('#bing', .6, {
       scale: .5,
       opacity: 0,
       ease: Bounce.easeOut,
-      repeat: 0,
       transformOrigin:'50% 50%',      
-    }).from(document.getElementById('youtube-1'), .6, {
+    }).from('#youtube-1', .6, {
       scale: .5,
       opacity: 0,
       ease: Bounce.easeOut,
-      repeat: 0,
       transformOrigin:'50% 50%',      
-    }).from(document.getElementById('facebook'), .6, {
+    }).from('#facebook', .6, {
       scale: .5,
       opacity: 0,
       ease: Bounce.easeOut,
-      repeat: 0,
       transformOrigin:'50% 50%'
-    }).from(document.getElementById('youtube-2'), .6, {
+    }).from('#youtube-2', .6, {
       scale: .5,
       opacity: 0,
       ease: Bounce.easeOut,
-      repeat: 0,
       transformOrigin:'50% 50%'      
     });    
   };    
 
+  const animateSafeTabs = () => {
+    let tl = new TimelineMax;
 
-
-
-  
-
-
-
+    tl.from('#safe-tabs-svg', .6, {
+      x: -200,
+      opacity: 0
+    }).to('#cursor', .4, {
+      x: '-420%',
+      y: '-130%',
+      ease: Power1.easeOut,
+      repeat: 0,
+    }).from('#dropdown', .6, {
+      scaleY: 0,
+      transformOrigin:'50% 0%',      
+      ease: Power1.easeOut,
+      repeat: 0,
+    }).to('#cursor', .4, {
+      x: '-480%',
+      y: '200%',
+      ease: Power1.easeOut,
+      repeat: 0,
+    }).from('#lock-one', .4, {
+      scale: 0,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%',
+    }, "lock-appear").to('#swivel-one', .4, {
+      scaleX: -1,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, 'swivel').to('#swivel-one', .4, {
+      y: 5,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, 'press').from('#lock-twoo', .4, {
+      scale: 0,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%',
+    }, "lock-appear").to('#swivel-twoo', .4, {
+      scaleX: -1,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, 'swivel').to('#swivel-twoo', .4, {
+      y: 5,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, "press").from('#lock-three', .4, {
+      scale: 0,
+      opacity: 0,
+      ease: Bounce.easeOut,
+      repeat: 0,
+      transformOrigin:'50% 50%',
+    }, "lock-appear").to('#swivel-three', .4, {
+      scaleX: -1,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, 'swivel').to('#swivel-three', .4, {
+      y: 5,
+      ease: Power1.easeOut,
+      repeat: 0,
+    }, 'press') 
+  };
 })();
