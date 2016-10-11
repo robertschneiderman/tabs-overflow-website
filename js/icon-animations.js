@@ -109,43 +109,43 @@
 
   let icons = Array.prototype.slice.call(document.querySelectorAll('.icon'));
 
-  // for (let i = 0; i < icons.length; i++) {
-  //   let icon =  icons[i];
-  //   randomDimensions(icon);
+  for (let i = 0; i < icons.length; i++) {
+    let icon =  icons[i];
+    randomDimensions(icon);
 
-  //   placeIconRandomly(icon);    
+    placeIconRandomly(icon);    
 
-  //   if (i === icons.length) debugger;
+    if (i === icons.length) debugger;
 
-  //   iconsExcluding = icons.slice(0, i).concat(icons.slice(i+1));
+    iconsExcluding = icons.slice(0, i).concat(icons.slice(i+1));
 
-  //   let j = 0;
-  //   while(overlap(icon, iconsExcluding)) {
-  //     // debugger;
-  //     if ((j >= 3) && (dimensionInteger(icon.style.width) > 6.5)) {
-  //       sizeDown(icon);
-  //       j = 0;
-  //     }
-  //     if (dimensionInteger(icon.style.width) < 6.5) {
-  //       icon.style.width = `4rem`
-  //       icon.style.height = `4rem`
-  //     }      
-  //     placeIconRandomly(icon);
-  //     j++
-  //   }
+    let j = 0;
+    while(overlap(icon, iconsExcluding)) {
+      // debugger;
+      if ((j >= 3) && (dimensionInteger(icon.style.width) > 6.5)) {
+        sizeDown(icon);
+        j = 0;
+      }
+      if (dimensionInteger(icon.style.width) < 6.5) {
+        icon.style.width = `4rem`
+        icon.style.height = `4rem`
+      }      
+      placeIconRandomly(icon);
+      j++
+    }
     
-  // };
+  };
 
-    // for (let i = 0; i < icons.length; i++) {
-    //   let time = (icons[i].getBoundingClientRect().top / 500);
+    for (let i = 0; i < icons.length; i++) {
+      let time = (icons[i].getBoundingClientRect().top / 500);
 
-    //   TweenMax.to(icons[i], 32, {
-    //     top: "-=1900",
-    //     rotation: `+=${mr(350, 450)}`,
-    //     ease: Linear.easeNone,
-    //     repeat: -1,
-    //   }, 0);    
-    // }
+      TweenMax.to(icons[i], 32, {
+        top: "-=1900",
+        rotation: `+=${mr(350, 450)}`,
+        ease: Linear.easeNone,
+        repeat: -1,
+      }, 0);    
+    }
 
   // setInterval(animateIcons, 28000);
 
