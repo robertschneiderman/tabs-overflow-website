@@ -2,36 +2,32 @@
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="293.6px" height="59.5px" viewBox="0 0 293.6 59.5" enable-background="new 0 0 293.6 59.5" xml:space="preserve">
-<text transform="matrix(1 0 0 1 57.4774 42.8006)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'FabfeltScript-Bold'" font-size="49">tabs</tspan><tspan x="70.2" y="0" font-family="'FabfeltScript-Bold'" font-size="49"> </tspan><tspan x="82.9" y="0" fill="#B4E2AF" font-family="'FabfeltScript-Bold'" font-size="49">overflow</tspan></text>
+	 width="294.6px" height="59.5px" viewBox="0 0 294.6 59.5" enable-background="new 0 0 294.6 59.5" xml:space="preserve">
+<text transform="matrix(1 0 0 1 58.4774 42.8006)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'FabfeltScript-Bold'" font-size="49">tabs</tspan><tspan x="70.2" y="0" font-family="'FabfeltScript-Bold'" font-size="49"> </tspan><tspan x="82.9" y="0" fill="#AFAFAF" font-family="'FabfeltScript-Bold'" font-size="49">overflow</tspan></text>
 <g>
-	<path fill="#B4E2AF" d="M0,26.8c0-5.5,0-10.9,0-16.4C0,9,0.2,7.5,2.2,7.3C4.5,7.1,5,8.5,5,10.5c0,9.7,0,19.5,0,29.2
-		c0,0.8,0,1.7,0,2.5c0.2,2.7,1.6,4.3,4.3,4.3c8.7,0.1,17.3,0.1,26,0c2.7,0,4.3-1.6,4.3-4.2c0.1-8.6,0.1-17.1,0-25.7
-		c0-2.8-1.6-4.3-4.5-4.3c-4,0-8.1,0-12.1,0c-1.7,0-3-0.3-3-2.4c0-2.2,1.3-2.6,3.2-2.6c4.5,0,8.9,0,13.4,0c4.9,0,8,2.8,8,7.8
-		c0.1,9.6,0.1,19.2,0,28.7c-0.1,4.8-3.1,7.6-7.9,7.7c-9.5,0.1-19,0.1-28.5,0c-5,0-8-2.9-8.1-8C-0.1,37.9,0,32.4,0,26.8
-		C0,26.8,0,26.8,0,26.8z"/>
-	<g>
-		<path fill="#FFFFFF" d="M24.4,27c2.5,0,5,0,7.5,0c1.4,0,2.1,0.7,2.1,2.5c0,1.8-0.8,2.3-2,2.3c-5.1,0-10.1,0-15.2,0
-			c-1.3,0-1.9-0.7-2-2.4c0-1.7,0.6-2.4,1.9-2.4C19.2,27,21.8,27,24.4,27z"/>
-		<path fill="#FFFFFF" d="M27.9,16.9c1.6,0,3.2,0,4.7,0c0.9,0,1.3,0.7,1.3,2.5c0,1.8-0.5,2.3-1.3,2.3c-3.2,0-6.4,0-9.6,0
-			c-0.8,0-1.2-0.7-1.2-2.4c0-1.7,0.4-2.4,1.2-2.4C24.6,16.9,26.3,16.9,27.9,16.9z"/>
-		<path fill="#FFFFFF" d="M22.4,36.9c3,0,6,0,9.1,0c1.6,0,2.5,0.7,2.5,2.5c0,1.8-1,2.3-2.5,2.3c-6.1,0-12.2,0-18.3,0
-			c-1.6,0-2.4-0.7-2.4-2.4c0-1.7,0.7-2.4,2.3-2.4C16.2,36.9,19.3,36.9,22.4,36.9z"/>
-		<g>
-			<g>
-				<g>
-					<path fill="#FFFFFF" d="M8.1,15.7H17c0.3,0,0.5,0.4,0.3,0.6l-4.5,5.3c-0.2,0.2-0.4,0.2-0.6,0l-4.5-5.3
-						C7.6,16.1,7.7,15.7,8.1,15.7z"/>
-				</g>
-				<g>
-					<g>
-						<path fill="#FFFFFF" d="M12.8,19.1c-1.3,0-2.4-1.1-2.4-2.3V6c0-1.3,1.1-2.3,2.4-2.3s2.4,1.1,2.4,2.3v10.8
-							C15.1,18.1,14.1,19.1,12.8,19.1z"/>
-					</g>
-				</g>
-			</g>
-		</g>
+	<defs>
+		<polygon id="SVGID_1_" points="11.2,33.2 28,51.8 45.2,33.2 36.7,33.2 36.7,7.3 19.3,7.3 19.3,33.2 		"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<rect x="-3.9" y="9.9" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="7.1" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="12.7" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="15.6" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="18.4" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="21.3" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="24.1" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="27" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="29.8" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-3.9" y="32.7" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="-26" y="35.5" fill="#B4E2AF" width="107.9" height="2"/>
+		<rect x="-14.9" y="38.3" fill="#B4E2AF" width="86.3" height="2"/>
+		<rect x="-3.9" y="41.2" fill="#B4E2AF" width="64.2" height="2"/>
+		<rect x="6.6" y="44" fill="#B4E2AF" width="43.2" height="2"/>
+		<rect x="17.4" y="46.9" fill="#B4E2AF" width="21.6" height="2"/>
+		<rect x="22.8" y="49.7" fill="#B4E2AF" width="10.8" height="2"/>
 	</g>
 </g>
-<path fill="none" stroke="#E5E5E5" stroke-width="4.7" stroke-linecap="round" stroke-miterlimit="10" d="M12.3,11"/>
 </svg>

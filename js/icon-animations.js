@@ -136,6 +136,8 @@
     
   };
 
+  debugger;
+
     for (let i = 0; i < icons.length; i++) {
       let time = (icons[i].getBoundingClientRect().top / 500);
 

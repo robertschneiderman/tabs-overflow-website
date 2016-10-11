@@ -117,7 +117,7 @@
   /*animation: heart 3s ease 0s 1 normal forwards;*/
   bottom: -20%;
   /*left: 50%;*/
-  opacity: .2;
+  opacity: .10;
   position: absolute;
   height: 0rem;
   width: 0rem;
@@ -200,7 +200,7 @@
 }
 
 .share-section {
-  background-color: #7dc5c5;
+  background-color: #86c5c5;
   /* background-image: url('../images/blue_gradient.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
