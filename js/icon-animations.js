@@ -138,13 +138,12 @@
 
   // debugger;
 
-    console.log("icons.length:", icons.length);
 
     for (let i = 0; i < icons.length; i++) {
       let time = (icons[i].getBoundingClientRect().top / 500);
 
-      TweenMax.to(icons[i], 32, {
-        top: "-=1900",
+      TweenMax.to(icons[i], 14.72, {
+        top: "-=874",
         rotation: `+=${mr(350, 450)}`,
         ease: Linear.easeNone,
         repeat: -1,
@@ -235,6 +234,8 @@
 
   $("#ot-safe-tabs").load("./images/svg/safe_tabs.svg", safeTabWaypoint);
 
+  $("#splash-logo").load("./images/svg/logo_light.svg");
+
 
   const animateOTCreation = () => {
     let tl = new TimelineMax;
@@ -243,9 +244,9 @@
       x: -200,
       opacity: 0
     }).to('#overflow-tab', .3, {
-      y: -25,
+      y: -57,
       ease: Linear.easeNone,
-    }, 0).to('#flash-start', .3, {
+    }, .5).to('#flash-start', .3, {
       scaleY: 11,
       scaleX: 12,
       transformOrigin:'5% 63%',
