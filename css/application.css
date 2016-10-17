@@ -136,11 +136,12 @@
   max-width: 90rem;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;  
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
 
-.how-to-section {padding: 1rem 0rem 0rem;}
+.how-to-section {padding: 1rem 0rem 0rem;overflow: hidden;}
 
 .how-to-container {
   border-bottom: 1px solid #e5e5e5;

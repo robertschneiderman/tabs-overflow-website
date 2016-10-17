@@ -323,17 +323,17 @@
       y: 5,
       ease: Power1.easeOut,
       repeat: 0,
-    }, 'press').from('#lock-twoo', .4, {
+    }, 'press').from('#lock-two', .4, {
       scale: 0,
       opacity: 0,
       ease: Bounce.easeOut,
       repeat: 0,
       transformOrigin:'50% 50%',
-    }, "lock-appear").to('#swivel-twoo', .4, {
+    }, "lock-appear").to('#swivel-two', .4, {
       scaleX: -1,
       ease: Power1.easeOut,
       repeat: 0,
-    }, 'swivel').to('#swivel-twoo', .4, {
+    }, 'swivel').to('#swivel-two', .4, {
       y: 5,
       ease: Power1.easeOut,
       repeat: 0,
